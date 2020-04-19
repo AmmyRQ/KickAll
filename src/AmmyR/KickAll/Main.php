@@ -9,7 +9,7 @@ class Main extends PluginBase {
 
 	public function onEnable() : void{
 		$this->getServer()->getCommandMap()->register("kickall", new Command($this));
-		$this->getServer()->getLogger()->info("- §aKickAll by AmmyR enabled successfully. §b(Twitter: @AmmyRQ)");
+		$this->getServer()->getLogger()->info("§6- §aKickAll by AmmyR enabled successfully. §b(Twitter: @AmmyRQ)");
 	}
 
 }
