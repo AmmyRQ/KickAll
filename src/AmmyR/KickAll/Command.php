@@ -18,7 +18,7 @@ class Command extends Cmd {
 	}
 
 	public function execute(CommandSender $player, string $commandLabel, array $args) : void{
-		$this->p = $this->p;
+		$this->p = $this->plugin;
 		if(!$player instanceof Player){
 			if($args == ""){
 				if($this->p->getServer()->getOnlinePlayers() == null){
