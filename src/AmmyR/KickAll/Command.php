@@ -12,12 +12,13 @@ class Command extends Cmd {
 	private $main;
 
 	public function __construct(Main $main){
-		$this->p = $main;
+		$this->plugin = $main;
 		parent::__construct("kickall", "Kick all the online players!", "/kickall <string: message>");
 		$this->setPermission("kickall.command");
 	}
 
 	public function execute(CommandSender $player, string $commandLabel, array $args) : void{
+		$this->p = $this->p;
 		if(!$player instanceof Player){
 			if($args == ""){
 				if($this->p->getServer()->getOnlinePlayers() == null){
