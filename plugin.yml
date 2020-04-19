@@ -1,0 +1,9 @@
+name : KickAll
+author: AmmyR
+api: 3.0.0
+main: AmmyR\KickAll\Main
+version: 1.2.0
+permissions:
+  kickall.command:
+    description: "Allows to use /kickall command."
+    default: op
