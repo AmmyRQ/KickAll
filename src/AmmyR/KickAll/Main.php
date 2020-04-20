@@ -1,5 +1,10 @@
 <?php
 
+/*
+Created by AmmyCoding
+Twitter: @AmmyR
+*/
+
 namespace AmmyR\KickAll;
 
 use pocketmine\plugin\PluginBase;
@@ -9,7 +14,6 @@ class Main extends PluginBase {
 
 	public function onEnable() : void{
 		$this->getServer()->getCommandMap()->register("kickall", new Command($this));
-		$this->getServer()->getLogger()->info("§6- §aKickAll by AmmyR enabled successfully. §b(Twitter: @AmmyRQ)");
 	}
 
 }
