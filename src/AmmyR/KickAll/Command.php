@@ -2,12 +2,13 @@
 
 namespace AmmyR\KickAll;
 
-use pocketmine\command\{Command as Cmd, CommandSender};
+use pocketmine\command\{Command as Cmd, CommandSender, PluginIdentifiableCommand};
+use pocketmine\plugin\Plugin;
 use pocketmine\utils\Config;
 use pocketmine\Player;
 use AmmyR\KickAll\Main;
 
-class Command extends Cmd {
+class Command extends Cmd implements PluginIdentifiableCommand {
 
 	private $main;
 
@@ -15,6 +16,10 @@ class Command extends Cmd {
 		$this->plugin = $main;
 		parent::__construct("kickall", "Kick all the online players!", "/kickall <string: message>");
 		$this->setPermission("kickall.command");
+	}
+	
+	public function getPlugin() : Plugin{
+		return $this->plugin;
 	}
 
 	public function execute(CommandSender $player, string $commandLabel, array $args) : void{
