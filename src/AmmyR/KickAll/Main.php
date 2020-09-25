@@ -1,8 +1,8 @@
 <?php
 
 /*
-Created by AmmyCoding
-Twitter: @AmmyR
+Created by AmmyR
+Twitter: @AmmyRQ
 */
 
 namespace AmmyR\KickAll;
