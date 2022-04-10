@@ -2,12 +2,12 @@
 
 namespace AmmyR\KickAll;
 
-use pocketmine\command\{Command, CommandSender, PluginIdentifiableCommand};
-use pocketmine\Player;
-use pocketmine\plugin\Plugin;
+use pocketmine\command\{Command, CommandSender};
+use pocketmine\player\Player;
+use pocketmine\plugin\{Plugin, PluginOwned};
 use pocketmine\utils\TextFormat;
 
-class KickCommand extends Command implements PluginIdentifiableCommand
+class KickCommand extends Command implements PluginOwned
 {
 
 	private $plugin;
@@ -18,7 +18,7 @@ class KickCommand extends Command implements PluginIdentifiableCommand
 		$this->setPermission("kickall.command");
 	}
 
-	public function getPlugin() : Plugin{
+	public function getOwningPlugin() : Plugin{
 		return $this->plugin;
 	}
 
@@ -32,7 +32,7 @@ class KickCommand extends Command implements PluginIdentifiableCommand
 		}
 
 		foreach($onlinePlayers as $player){
-			$player->kick(implode(" ", $args), false);
+			$player->kick(implode(" ", $args));
 		}
 
 		$this->plugin->getServer()->getLogger()
